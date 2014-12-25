@@ -35,6 +35,22 @@
             </intent-filter>
         </service>
 
+        <service
+            android:name=".services.ShoutIntentService"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":shout" />
+
+        <receiver
+            android:name=".receivers.AppInstalledObserveReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
